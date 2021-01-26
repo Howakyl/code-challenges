@@ -1,4 +1,5 @@
-// 1) Descending Order: 
+// 1) Descending Order:
+// takes in a number, and orders the digits in descending order
 function descendingOrder(n){
   //...
   if (n >= 0) {
