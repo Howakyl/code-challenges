@@ -9,11 +9,22 @@
 //   }
 // }
 
-// 2) Convert number to reversed array of digits
-function digitize(n) {
-  if (n >= 0) {
-    return n.toString().split('').reverse().map(number => parseInt(number))
-  };
-};
 
-console.log(digitize(18459))
+// 2) Convert number to reversed array of digits
+// function digitize(n) {
+//   if (n >= 0) {
+//     return n.toString().split('').reverse().map(number => parseInt(number))
+//   };
+// };
+
+// console.log(digitize(18459))
+
+
+// 3) Take a number and sum its digits raised to the consecutive powers.
+// ex: 135 = 1^1 + 3^2 + 5^3
+
+// function sumDigPow (a, b) {
+//   for (a; start < b; start++) {
+
+//   }
+// }
