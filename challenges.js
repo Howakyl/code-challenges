@@ -12,7 +12,7 @@
 // 2) Convert number to reversed array of digits
 function digitize(n) {
   if (n >= 0) {
-    return n.toString().split('').reverse().map((number) => {return parseInt(number)})
+    return n.toString().split('').reverse().map(number => parseInt(number))
   };
 };
 
