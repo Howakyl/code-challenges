@@ -23,8 +23,16 @@
 // 3) Take a number and sum its digits raised to the consecutive powers.
 // ex: 135 = 1^1 + 3^2 + 5^3
 
-// function sumDigPow (a, b) {
-//   for (a; start < b; start++) {
+function sumDigPow (a, b) {
+  let answers = [];
 
-//   }
-// }
+  while (a <= b) {
+    if (a.toString().split('').reduce((total, currentNum, index) => total + currentNum ** (index + 1), 0) == a) {
+      answers.push(a);
+    };
+    a++;
+  }
+  return console.log(answers);
+}
+
+sumDigPow(1,150);
