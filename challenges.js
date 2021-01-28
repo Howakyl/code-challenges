@@ -23,16 +23,41 @@
 // 3) Take a number and sum its digits raised to the consecutive powers.
 // ex: 135 = 1^1 + 3^2 + 5^3
 
-function sumDigPow (a, b) {
-  let answers = [];
+// function sumDigPow (a, b) {
+//   let answers = [];
 
-  while (a <= b) {
-    if (a.toString().split('').reduce((total, currentNum, index) => total + currentNum ** (index + 1), 0) == a) {
-      answers.push(a);
-    };
-    a++;
-  }
-  return console.log(answers);
-}
+//   while (a <= b) {
+//     if (a.toString().split('').reduce((total, currentNum, index) => total + currentNum ** (index + 1), 0) == a) {
+//       answers.push(a);
+//     };
+//     a++;
+//   }
+//   return console.log(answers);
+// }
 
-sumDigPow(1,150);
+// sumDigPow(1,150);
+
+// let word = 'thisWord';
+// word = word.charAt(0).toUpperCase() + word.slice(1);
+// console.log(word);
+
+
+// 4) Convert a string to Camel Case: letters that follow - OR _ set to uppercase.
+//////// MY SOLUTION ////////
+
+// function toCamelCase(str){
+//     for (let i = 0; i < str.length; i++) {
+//       while (str.charAt(i).includes("-")) {
+//         str = str.replace('-', '').replace( str[i + 1], str[i + 1].toUpperCase())
+//       }
+//       while (str.charAt(i).includes("_")) {
+//         str = str.replace('_', '').replace( str[i + 1], str[i + 1].toUpperCase())
+//       }
+//     }
+//   console.log(str);
+// }
+// toCamelCase('the_stealth_warrior');
+
+
+
+
