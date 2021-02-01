@@ -67,4 +67,23 @@
 //    });
 // }
 
+// 5) Spin Words 
+// reverse all words that are five or more letter words
 
+//////// MY SOLUTION ////////
+function spinWords(sentence) {
+
+    let string = ""
+    sentence.split(" ").forEach(word => {
+        if(word.length >=5) {
+            word = word.split("").reverse().join("");
+            string += " " + word
+        } else {
+            string += " " + word
+        }
+    });
+    return console.log(string.trim());
+}
+
+spinWords("this is a test")
+spinWords("this is another test")
