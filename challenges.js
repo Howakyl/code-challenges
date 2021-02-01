@@ -71,19 +71,27 @@
 // reverse all words that are five or more letter words
 
 //////// MY SOLUTION ////////
-function spinWords(sentence) {
+// function spinWords(sentence) {
 
-    let string = ""
-    sentence.split(" ").forEach(word => {
-        if(word.length >=5) {
-            word = word.split("").reverse().join("");
-            string += " " + word
-        } else {
-            string += " " + word
-        }
-    });
-    return console.log(string.trim());
-}
+//     let string = ""
+//     sentence.split(" ").forEach(word => {
+//         if(word.length >=5) {
+//             word = word.split("").reverse().join("");
+//             string += " " + word
+//         } else {
+//             string += " " + word
+//         }
+//     });
+//     return string.trim();
+// }
 
-spinWords("this is a test")
-spinWords("this is another test")
+//////// CONCISE SOLUTION ////////
+
+// function spinWords(words) {
+//     return words.split(' ').map(function (word) {
+//         return (word.length > 4) ? word.split('').reverse().join('') : word;
+//     }).join(' ');
+// }
+
+// console.log(spinWords("this is a test"));
+// console.log(spinWords("this is another test"));
