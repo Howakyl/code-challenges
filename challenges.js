@@ -95,3 +95,14 @@
 
 // console.log(spinWords("this is a test"));
 // console.log(spinWords("this is another test"));
+
+// 6) Summing a number's digits
+// sum the digits of a number with their absolute values
+///// MY SOLUTION /////
+function sumDigits(number) {
+    number = Math.abs(number);
+    number = parseInt(number.toString().split('').reduce((a,b) => Math.abs(a) + Math.abs(b)))
+    console.log(number)
+}
+
+sumDigits(-0)
