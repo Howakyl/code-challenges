@@ -105,4 +105,11 @@ function sumDigits(number) {
     console.log(number)
 }
 
-sumDigits(-0)
+////// another solution //////
+// const sumDigits = numberToSum => Math.abs(numberToSum)
+//     .toString()
+//     .split('')
+//     .map(Number)
+//     .reduce((acc, num) => acc + num, 0);
+
+sumDigits(-450)
