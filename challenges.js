@@ -125,9 +125,16 @@ function calculateYears(principal, interest, tax, desired) {
       principal += gain;
       years++;
     }
-    if (principal >= desired) {
-        return years;
-      }
+    return years;
+}
+
+function calculateYears(principal, interest, tax, desired) {
+  let years = 0;
+  while (principal < desired) {
+    principal += (principal * interest) * (1 - tax);
+    years++;
   }
+  return years;
+}
 
 console.log(calculateYears(1000, .05, .18, 1100));
