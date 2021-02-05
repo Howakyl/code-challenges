@@ -99,11 +99,11 @@
 // 6) Summing a number's digits
 // sum the digits of a number with their absolute values
 ///// MY SOLUTION /////
-function sumDigits(number) {
-    number = Math.abs(number);
-    number = parseInt(number.toString().split('').reduce((a,b) => Math.abs(a) + Math.abs(b)))
-    console.log(number)
-}
+// function sumDigits(number) {
+//     number = Math.abs(number);
+//     number = parseInt(number.toString().split('').reduce((a,b) => Math.abs(a) + Math.abs(b)))
+//     console.log(number)
+// }
 
 ////// another solution //////
 // const sumDigits = numberToSum => Math.abs(numberToSum)
@@ -112,4 +112,24 @@ function sumDigits(number) {
 //     .map(Number)
 //     .reduce((acc, num) => acc + num, 0);
 
-sumDigits(-450)
+// sumDigits(-450)
+
+// 7) Money, Money, Money
+
+function calculateYears (principal, interest, tax, desired) {
+    let years = 0;
+
+    while (principal < desired) {
+        let gain = principal * interest;
+        gain -= tax * gain;
+        principal += gain;
+        console.log('money gained for this year: ' , gain);
+        console.log("total money: " , principal);
+
+
+        years++;
+    }
+    if (principal >= desired) console.log(`it took ${years} years to reach the desired money!`)
+}
+
+calculateYears(1000, .05, .18, 1100);
