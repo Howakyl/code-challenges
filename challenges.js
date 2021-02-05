@@ -116,20 +116,18 @@
 
 // 7) Money, Money, Money
 
-function calculateYears (principal, interest, tax, desired) {
+//// MY SOLUTION ////
+function calculateYears(principal, interest, tax, desired) { 
     let years = 0;
-
     while (principal < desired) {
-        let gain = principal * interest;
-        gain -= tax * gain;
-        principal += gain;
-        console.log('money gained for this year: ' , gain);
-        console.log("total money: " , principal);
-
-
-        years++;
+      let gain = principal * interest;
+      gain -= tax * gain;
+      principal += gain;
+      years++;
     }
-    if (principal >= desired) console.log(`it took ${years} years to reach the desired money!`)
-}
+    if (principal >= desired) {
+        return years;
+      }
+  }
 
-calculateYears(1000, .05, .18, 1100);
+console.log(calculateYears(1000, .05, .18, 1100));
