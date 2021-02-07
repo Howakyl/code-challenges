@@ -117,24 +117,43 @@
 // 7) Money, Money, Money
 
 //// MY SOLUTION ////
-function calculateYears(principal, interest, tax, desired) { 
-    let years = 0;
-    while (principal < desired) {
-      let gain = principal * interest;
-      gain -= tax * gain;
-      principal += gain;
-      years++;
-    }
-    return years;
-}
+// function calculateYears(principal, interest, tax, desired) { 
+//     let years = 0;
+//     while (principal < desired) {
+//       let gain = principal * interest;
+//       gain -= tax * gain;
+//       principal += gain;
+//       years++;
+//     }
+//     return years;
+// }
 
-function calculateYears(principal, interest, tax, desired) {
-  let years = 0;
-  while (principal < desired) {
-    principal += (principal * interest) * (1 - tax);
-    years++;
-  }
-  return years;
-}
+// //// more concise solution ////
+// function calculateYears(principal, interest, tax, desired) {
+//   let years = 0;
+//   while (principal < desired) {
+//     principal += (principal * interest) * (1 - tax);
+//     years++;
+//   }
+//   return years;
+// }
 
-console.log(calculateYears(1000, .05, .18, 1100));
+// console.log(calculateYears(1000, .05, .18, 1100));
+
+// 8) two fighters, one winner
+
+// function declareWinner(fighter1, fighter2, firstAttacker) {
+//     while (fighter1.health > 0 && fighter2.health > 0) {
+//       fighter2.health -= fighter1.damagePerAttack;
+//       fighter1.health -= fighter2.damagePerAttack;
+//     }
+    
+//     if (fighter1.health <= 0 && fighter2.health <= 0)
+//       return firstAttacker;
+//     else if (fighter1.health <= 0)
+//       return fighter2.name;
+//     else
+//       return fighter1.name;
+//   }
+
+
