@@ -1,7 +1,11 @@
+function reverseWords (str: string) {
 
+    let newString: string = ""
+        str.split(' ').forEach(word => {
+            word = word.split('').reverse().join('')
+            newString += " " + word
+        })
+        return newString.trim();
+}
 
-// function reverseWords (str: string)  {
-//     return str = str.split('').reverse().join('')
-// }
-
-// console.log(reverseWords("This is an example!"));
+console.log(reverseWords("This is an example!"))

@@ -21,16 +21,10 @@ function breakCamelCase2 (string) {
 
 //////////////////////////////////////////////////////
 
+//// MY SOLUTION ////
 function reverseWords (str) {
-  
-  //  [...str].forEach(word => {
-  //   word = word.split(' ').reverse().join('')
-  //   console.log(word)
-  // })
-    // str.split(' ').reverse().join(' ')
     let newString = ""
       str.split(' ').forEach(word => {
-        // console.log(word)
         word = word.split('').reverse().join('')
         newString += " " + word
       })
