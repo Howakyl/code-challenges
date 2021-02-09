@@ -8,4 +8,7 @@ function reverseWords (str: string) {
         return newString.trim();
 }
 
+const reverse = (x: string) => x.split('').reverse().join('')
+export const reverseWords2 = (str: string): string => str.split(' ').map(reverse).join(' ');
+
 console.log(reverseWords("This is an example!"))
