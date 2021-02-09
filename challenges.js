@@ -155,5 +155,3 @@
 //     else
 //       return fighter1.name;
 //   }
-
-
