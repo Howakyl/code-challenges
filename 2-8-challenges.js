@@ -1,4 +1,6 @@
-function solution (string) {
+// BREAK CAMEL CASE //
+//// MY SOLUTION ////
+function breakCamelCase1 (string) {
 
     for (let i = 0; i < string.length; i++) {
       if (string.charAt(i) === string[i].toUpperCase()) {
@@ -9,8 +11,13 @@ function solution (string) {
     return string;
 };
 
-function breakCamelCase (string) {
+//// CONCISE SOLUTION ////
+function breakCamelCase2 (string) {
   return (string.replace(/([A-Z])/g, ' $1'))
 }
-console.log(breakCamelCase("camelCasingTest"));
-// console.log(solution("camelCasingTest"))
+// console.log(breakCamelCase2("camelCasingTest"));
+// console.log(breakCamelCase1("camelCasingTest"))
+
+
+//////////////////////////////////////////////////////
+
