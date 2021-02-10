@@ -33,17 +33,25 @@ function reverseWords (str) {
 
 // console.log(reverseWords("This is an example!"))
 
+//////////////////////////////////////////////////////
+
+// SOLUTION EXPLAINED: find the largest sum subarray ex: [4, -1, 2, 1]
+// take the first value of "array" and those become the values of maxSoFar and currMax.
+// loop through "array", then currMax compares the current index, to currMax + the index.
+// maxSoFar is similar. It either stays the same, or currMax if currMax is higher.
+
 function maxSubArray (array) {
 
   let maxSoFar = array[0];
-  let currMax= array[0];
+  let currMax = array[0];
 
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 1; i < array.length; i++) {
     currMax = Math.max(array[i], currMax + array[i]);
     maxSoFar = Math.max(maxSoFar, currMax);
-    console.log('MAX SO FAR: -----', maxSoFar);
   }
-  return maxSoFar;
+  return maxSoFar <= 0 || array.length === 0 ? 0 : maxSoFar;
 }
+
 let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-console.log(maxSubArray(arr));
+// console.log(maxSubArray(arr));
+// console.log(maxSubArray([]))
