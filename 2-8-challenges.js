@@ -31,4 +31,18 @@ function reverseWords (str) {
       return newString.trim();
 }
 
-console.log(reverseWords("This is an example!"))
+// console.log(reverseWords("This is an example!"))
+
+function maxSubArray (a) {
+
+  let maxSoFar = a[0];
+  let currMax= a[0];
+
+  for (let i =0; i < a.length; i++) {
+    currMax = Math.max(a[i], currMax + a[i]);
+    maxSoFar = Math.max(maxSoFar, currMax);
+  }
+  return maxSoFar;
+}
+let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+console.log(maxSubArray(arr));
