@@ -54,4 +54,25 @@ function maxSubArray (array) {
 
 let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 // console.log(maxSubArray(arr));
-// console.log(maxSubArray([]))
+
+//////////////////////////////////////////////////////
+
+//// MY SOLUTION ////
+// function testing (array) {
+// let newArr = [];
+  
+//   for (let i = 0; i < array.length; i++) {
+//     newArr.push(`${i + 1}: ${array[i]}`)
+//   }
+//   return newArr;
+// }
+
+//// CONCISE SOLUTION ////
+function testing2 (array) {
+  return array.map((letter, index) => {
+    return `${index + 1}: ${letter}`;
+  });
+};
+
+let a  = ['a' , 'b' , 'c'];
+// console.log(testing2(a));
