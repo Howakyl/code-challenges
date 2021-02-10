@@ -45,4 +45,4 @@ function maxSubArray (a) {
   return maxSoFar;
 }
 let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-console.log(maxSubArray(arr));
+// console.log(maxSubArray(arr));
