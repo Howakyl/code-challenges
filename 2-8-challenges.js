@@ -76,3 +76,19 @@ function testing2 (array) {
 
 let a  = ['a' , 'b' , 'c'];
 // console.log(testing2(a));
+
+// FACTORIAL NUMBERS //
+
+function factorial (num) {
+  let total = 1;
+  for (let i =1; i <= num; i++) {
+    total *= i 
+  };
+  if (num >= 0 && num <= 12) {
+    return total;
+  } else {
+    throw new RangeError('number argument must be between 0 and 12.');
+  };
+}
+
+// console.log(factorial(5));
