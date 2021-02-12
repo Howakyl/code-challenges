@@ -60,7 +60,7 @@ let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 //// MY SOLUTION ////
 // function testing (array) {
 // let newArr = [];
-  
+
 //   for (let i = 0; i < array.length; i++) {
 //     newArr.push(`${i + 1}: ${array[i]}`)
 //   }
@@ -76,6 +76,8 @@ function testing2 (array) {
 
 let a  = ['a' , 'b' , 'c'];
 // console.log(testing2(a));
+//////////////////////////////////////////////////////
+
 
 // FACTORIAL NUMBERS //
 
@@ -92,3 +94,11 @@ function factorial (num) {
 }
 
 // console.log(factorial(5));
+//////////////////////////////////////////////////////
+
+function addBinary (a,b) {
+  let woop = (a + b).toString(2)
+  return woop;
+}
+
+console.log(addBinary(1,2))
