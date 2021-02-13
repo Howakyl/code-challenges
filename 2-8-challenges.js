@@ -101,4 +101,20 @@ function addBinary (a,b) {
   return woop;
 }
 
-console.log(addBinary(1,2))
+// console.log(addBinary(1,2))
+
+//////////////////////////////////////////////////////
+
+//// MY SOLUTION ////
+function strayNumbers (array) {
+  
+  for (let i = 1; i < array.length + 1; i ++) {
+    if (array[i] !== array[i - 1] && array[i] !== array[i + 1]) {
+      return array[i]
+    }
+    if (array[0] !== array[1]) {
+      return array[0]
+    }
+  }
+}
+console.log(strayNumbers([3,1,1,1]))
