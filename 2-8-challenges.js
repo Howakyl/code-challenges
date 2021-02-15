@@ -105,6 +105,7 @@ function addBinary (a,b) {
 
 //////////////////////////////////////////////////////
 
+// find the index of an ODD-NUMBERED array, and return it.
 //// MY SOLUTION ////
 function strayNumbers (array) {
   
@@ -117,4 +118,38 @@ function strayNumbers (array) {
     }
   }
 }
-console.log(strayNumbers([3,1,1,1]))
+// console.log(strayNumbers([3,1,1,1]))
+
+function domainName(url) {
+
+  // for (let i = 0; i < url.length; i++) {
+    if (url.indexOf('//')) {
+      if (url.indexOf('.co')) {
+        
+        let slash = url.indexOf('//');
+        let dotCom = url.indexOf('.co');
+        
+        let domain = url.slice((slash + 2), dotCom)
+        console.log(domain)
+      }
+    } else if (url.indexOf('www.')) {
+      let dubya = url.indexOf('www.')
+      
+      if (url.indexOf('.co')) {
+        let dotCom = url.indexOf('.co');
+
+        let wDomain = url.slice((dubya + 2), dotCom);
+
+        console.log(wDomain)
+      } else if (url.indexOf('.ru')) {
+        let rCom = url.indexOf('.ru');
+        wDomain = url.slice(dubya, rCom)
+
+        console.log()
+      }
+    }
+  // }
+}
+
+// domainName("http://github.com/carbonfive/raygun")
+// domainName("www.xakep.ru")
