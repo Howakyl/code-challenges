@@ -44,4 +44,4 @@ function nbMonths (startPriceOld, startPriceNew, savingPerMonth, percentLossByMo
   return [months, Math.round(startPriceOld + savings - startPriceNew)]
 }
 
-console.log(nbMonths(2000, 8000, 1000, 1.5));
+// console.log(nbMonths(2000, 8000, 1000, 1.5));

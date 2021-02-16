@@ -161,4 +161,40 @@ function domainName(url){
   return url.split('.')[0];
 };
 
-console.log(domainName("www.xakep.ru"))
+// console.log(domainName("www.xakep.ru"))
+
+//// The Vowel Code ////
+// replace all lowercase vowels in a string with numbers, according to the following pattern:
+//  a = 1
+// e = 2
+// i = 3
+// o = 4
+// u = 5
+
+// then, make a function to turn these numbers back into letters
+
+function encode(string) {
+  
+  for (let i = 0; i < string.length; i++) {
+    string = string.replace('a' , '1');
+    string = string.replace('e', '2');
+    string = string.replace('i', '3');
+    string = string.replace('o', '4');
+    string = string.replace('u', '5');
+  }
+  return string;
+}
+
+function decode(string) {
+  for (let i = 0; i < string.length; i++) {
+    string = string.replace('1' , 'a');
+    string = string.replace('2', 'e');
+    string = string.replace('3', 'i');
+    string = string.replace('4', 'o');
+    string = string.replace('5', 'u');
+  }
+  return string;
+}
+
+console.log(encode('hello'));
+console.log(decode('h2ll4'));
