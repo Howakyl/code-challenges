@@ -120,7 +120,7 @@ function strayNumbers (array) {
 }
 // console.log(strayNumbers([3,1,1,1]))
 
-function domainName(url) {
+function domainName2(url) {
 
   // for (let i = 0; i < url.length; i++) {
     if (url.indexOf('//')) {
@@ -153,3 +153,12 @@ function domainName(url) {
 
 // domainName("http://github.com/carbonfive/raygun")
 // domainName("www.xakep.ru")
+
+function domainName(url){
+  url = url.replace("https://", '');
+  url = url.replace("http://", '');
+  url = url.replace("www.", '');
+  return url.split('.')[0];
+};
+
+console.log(domainName("www.xakep.ru"))
