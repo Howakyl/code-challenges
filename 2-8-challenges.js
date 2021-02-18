@@ -196,5 +196,5 @@ function decode(string) {
   return string;
 }
 
-console.log(encode('hello'));
-console.log(decode('h2ll4'));
+// console.log(encode('hello'));
+// console.log(decode('h2ll4'));

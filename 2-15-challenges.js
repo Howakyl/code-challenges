@@ -45,3 +45,30 @@ function nbMonths (startPriceOld, startPriceNew, savingPerMonth, percentLossByMo
 }
 
 // console.log(nbMonths(2000, 8000, 1000, 1.5));
+
+//// Sum of Pairs 
+let array = [10, 5, 2, 3, 7, 5];
+
+
+function sumPairs (ints , sum) {
+
+  const numbersSeen = {};
+
+  for (let i = 0 ; i < ints.length; i++) {
+    console.log(numbersSeen)
+    const currentNumber = ints[i];
+
+    const pair = sum - currentNumber;
+
+    if (numbersSeen[pair] !== undefined) {
+      return [pair, currentNumber];
+    }
+
+    if (numbersSeen[currentNumber] === undefined) {
+      numbersSeen[currentNumber] = i;
+    }
+  }
+
+  return null;
+}
+// console.log(sumPairs(array , 10))
