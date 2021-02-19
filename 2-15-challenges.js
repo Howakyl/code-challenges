@@ -72,3 +72,21 @@ function sumPairs (ints , sum) {
   return null;
 }
 // console.log(sumPairs(array , 10))
+
+
+//// Two Sum ////
+// a function that takes an array of numbers, and a target number.
+// return two items in the array, that when added together equal the target number.
+function twoSum (numbers, target) {
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        return [i ,j]
+      }
+    }
+  }
+}
+
+let arr = [1,2,3];
+console.log(twoSum(arr, 4));
