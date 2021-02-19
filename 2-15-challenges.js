@@ -91,30 +91,15 @@ function twoSum (numbers, target) {
 //////////////////////////////////////////
 
 function stockList(listOfArt, listOfCat) {
-  let arr = [];
-  let sum = 0;
-  for (let i = 0; i < listOfArt.length; i++) {
-    for (let j = 0; j < listOfCat.length; j++) {
+  if (!listOfArt.length || !listOfCat.length) return ''
 
-      if (listOfArt[i].charAt(0) == listOfCat[j]) {
-        arr.push(listOfArt[i].split(' '))
-        console.log(arr)
-      }
-    }
-  }
-
-  for (let k = 0; k < arr.length; k++) {
-    arr[k][1] = parseInt(arr[k][1])
-    if (arr[k][0].charAt(0) === listOfCat[k]) {
-      sum += arr[k][1]
-    }
-    // console.log('ARR:',arr[k])
-  }
-  console.log(arr)
-  console.log(sum)
+  return listOfCat.map(category => {
+    const sum = listOfArt.reduce((a,b) => a + (b.charAt(0) === category ? +b.split(' ')[1]: 0), 0)
+    return `(${category} : ${sum})`
+  }).join(' - ')
 }
 
 b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"]
 c = ["A", "B"]
 
-stockList(b, c);
+console.log(stockList(b, c));
