@@ -102,4 +102,32 @@ function stockList(listOfArt, listOfCat) {
 b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"]
 c = ["A", "B"]
 
-console.log(stockList(b, c));
+// console.log(stockList(b, c));
+
+function dataReverse(array) {
+  let reverseArr = [];
+  let newArr = [];
+  for (let i = 0; i < array.length + 1; i++) {
+    if (i % 8 === 0 && i < 9) {
+      console.log(array[i])
+      newArr.push(array.slice(0,i))
+      console.log('new arr:',newArr)
+    } else if (i % 8 === 0) {
+      newArr.push(array.slice(i -8, i)) 
+      console.log('new arr:', newArr)
+    }
+  }
+  // reverseArr.push(newArr)
+  // reverseArr = reverseArr.reverse().join(' ')
+  // console.log(reverseArr)
+  newArr = newArr.reverse().join('')
+  // for (let i = 0; i < newArr.length; i++) {
+  //   return parseInt(newArr[i])
+  // }
+  
+  // newArr = parseInt(newArr)
+  console.log(newArr)
+}
+
+const data1 = [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
+dataReverse(data1)
