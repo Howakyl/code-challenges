@@ -103,7 +103,9 @@ b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"]
 c = ["A", "B"]
 
 // console.log(stockList(b, c));
-
+//////////////////////////////////////////
+//// Data Reverse ////
+// MY SOLUTION //
 function dataReverse(array) {
   if (array.length == 0) return [];
   let newArr = [];
@@ -118,5 +120,15 @@ function dataReverse(array) {
   return newArr.reverse().toString().split(',').map(nums => parseInt(nums))  
 }
 
-const data1 = [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
-console.log(dataReverse(data1))
+// CONCISE SOLUTION //
+function dataReverse2(array) {
+  const newArray = [];
+  for (let i = 0; i < array.length; i += 8) {
+    newArray.unshift(...array.slice(i, i + 8));
+  }
+  return newArray;
+}
+
+// const data1 = [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
+// console.log(dataReverse(data1))
+// console.log(dataReverse2(data1))
