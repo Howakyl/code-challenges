@@ -12,6 +12,12 @@ Array.prototype.cube = function () {
   return this.map(nums => Math.pow(nums ,3))
 }
 
+// .sum()
+Array.prototype.sum = function () {
+  return this.reduce((a,b) => a + b, 0)
+}
+
 const array = [1, 2, 3, 4, 5];
 console.log(array.square())
 console.log(array.cube())
+console.log(array.sum())
