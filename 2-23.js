@@ -30,9 +30,17 @@ Array.prototype.even = function () {
   return this.filter(num => num % 2 === 0)
 }
 
+// .odd()
+Array.prototype.odd = function () {
+  return this.filter(num => num % 2 !== 0)
+}
+
 const array = [1, 2, 3, 4, 5];
 console.log(array.square())
 console.log(array.cube())
 console.log(array.sum())
 console.log(array.average())
 console.log(array.even())
+console.log(array.odd())
+
+/////////////////////////////////////////
