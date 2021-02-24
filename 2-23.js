@@ -36,11 +36,42 @@ Array.prototype.odd = function () {
 }
 
 const array = [1, 2, 3, 4, 5];
-console.log(array.square())
-console.log(array.cube())
-console.log(array.sum())
-console.log(array.average())
-console.log(array.even())
-console.log(array.odd())
+// console.log(array.square())
+// console.log(array.cube())
+// console.log(array.sum())
+// console.log(array.average())
+// console.log(array.even())
+// console.log(array.odd())
 
 /////////////////////////////////////////
+//// Mexican Wave //// 
+// loop through a string and capitalize each character one by one
+const wave = (string) => {
+  let array = [];
+  for (let i = 0; i < string.length; i++) {
+    console.log('string: ', string)
+    string = string.toLowerCase()
+    // console.log("STRING: ", string[i])
+    if (string.charAt(i) !== ' ') {
+      string = string.replace(string[i], string[i].toUpperCase())
+      array.push(string)
+    }
+  }
+  return array
+}
+
+// console.log(wave('two words'))
+
+const aaa = (string) => {
+  let newArr = [];
+  for (let i = 0; i < string.length; i++) {
+    let word = string.split('');
+    console.log(word)
+    if (word[i] !== ' ') {
+      word[i] = word[i].toUpperCase()
+      newArr.push(word.join(''))
+    }
+  }
+  return newArr
+}
+console.log(aaa('two words'))
