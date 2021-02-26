@@ -74,4 +74,14 @@ const aaa = (string) => {
   }
   return newArr
 }
-console.log(aaa('two words'))
+// console.log(aaa('two words'))
+/////////////////////////////////////////
+//// Meeting ////
+// make the string uppercase
+// sort in alphabetical order, by last name
+
+function meeting(people) {
+  return people.toUpperCase();
+}
+const people = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+console.log(meeting(people))
