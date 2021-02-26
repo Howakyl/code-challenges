@@ -81,7 +81,13 @@ const aaa = (string) => {
 // sort in alphabetical order, by last name
 
 function meeting(people) {
-  return people.toUpperCase();
+  let namesArr = people.toUpperCase()
+    .split(';')
+    .map(names => names.split(':').reverse())
+    .sort()
+    .join(')(')
+    .replace(/,/g , ', ')
+  return `(${namesArr})`
 }
-const people = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
-console.log(meeting(people))
+const people = "Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn";
+// console.log(meeting(people))
