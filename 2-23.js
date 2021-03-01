@@ -91,3 +91,16 @@ function meeting(people) {
 }
 const people = "Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn";
 // console.log(meeting(people))
+
+function uniqueInOrder (input) {
+  let array = [];
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] !== input[i + 1]) {
+      array.push(input[i])
+    }
+    console.log(input[i])
+  }
+  console.log('ARRAY', array)
+}
+
+uniqueInOrder('ABBCcAD')
