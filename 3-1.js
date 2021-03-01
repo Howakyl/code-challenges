@@ -4,12 +4,15 @@
 // the sum of these would be 2500. Which is 50 * 50, a square!
 // the RESULT will be an array of arrays. Each subarray having two elements; first the number whose squared divisors is a square, and then the sum of the squared numbers.
 
-function listSquared(m, n) {
-    
-}
-const num = 42;
-for (let i = 0; i < num  + 1; i++) {
-    if (Number.isInteger(num / i)) {
-        console.log(i)
+function listSquared(minNumber, maxNum) {
+    for (let i = minNumber; i < maxNum  + 1; i++) {
+        let divisors = [];
+        for (let k = minNumber; k < maxNum + 1; k++) {
+            if (Number.isInteger(i / k)) {
+                divisors.push(k)
+            }
+        }
+        console.log(`Divisors for ${i}:`,divisors)
     }
 }
+listSquared(1, 42)
