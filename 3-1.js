@@ -12,9 +12,16 @@ function listSquared(minNumber, maxNum) {
         divisors.push(Math.pow(k,2))
       }
     }
-    console.log(`Divisors for ${i}:`,divisors)
+    // console.log(`Divisors for ${i}:`,divisors)
     let sum = divisors.reduce((accumulator, currValue) => accumulator + currValue)
-    console.log(sum)
+    // console.log('sum:',sum)
+    let squared = Math.sqrt(sum)
+    if (Number.isInteger(squared)) {
+      console.log('squared number!', sum)
+      console.log(i)
+    }
   }
 }
-listSquared(1, 42)
+listSquared(1, 250)
+// let squared = Math.sqrt(2500)
+// console.log(Math.pow(squared,2))
