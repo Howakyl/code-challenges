@@ -5,14 +5,16 @@
 // the RESULT will be an array of arrays. Each subarray having two elements; first the number whose squared divisors is a square, and then the sum of the squared numbers.
 
 function listSquared(minNumber, maxNum) {
-    for (let i = minNumber; i < maxNum  + 1; i++) {
-        let divisors = [];
-        for (let k = minNumber; k < maxNum + 1; k++) {
-            if (Number.isInteger(i / k)) {
-                divisors.push(k)
-            }
-        }
-        console.log(`Divisors for ${i}:`,divisors)
+  for (let i = minNumber; i < maxNum  + 1; i++) {
+    let divisors = [];
+    for (let k = minNumber; k < maxNum + 1; k++) {
+      if (Number.isInteger(i / k)) {
+        divisors.push(Math.pow(k,2))
+      }
     }
+    console.log(`Divisors for ${i}:`,divisors)
+    let sum = divisors.reduce((accumulator, currValue) => accumulator + currValue)
+    console.log(sum)
+  }
 }
 listSquared(1, 42)
