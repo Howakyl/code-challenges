@@ -5,23 +5,27 @@
 // the RESULT will be an array of arrays. Each subarray having two elements; first the number whose squared divisors is a square, and then the sum of the squared numbers.
 
 function listSquared(minNumber, maxNum) {
-  for (let i = minNumber; i < maxNum  + 1; i++) {
-    let divisors = [];
-    for (let k = minNumber; k < maxNum + 1; k++) {
-      if (Number.isInteger(i / k)) {
-        divisors.push(Math.pow(k,2))
+  if (1 <= minNumber && minNumber <= maxNum) {
+    let answers = [];
+    for (let i = minNumber; i < maxNum  + 1; i++) {
+      let divisors = [];
+      for (let k = 0; k < maxNum + 1; k++) {
+        if (Number.isInteger(i / k)) {
+          divisors.push(Math.pow(k,2))
+        }
+      }
+      // console.log(`Divisors for ${i}:`,divisors)
+      let sum = divisors.reduce((accumulator, currValue) => accumulator + currValue)
+      // console.log('sum:',sum)
+      if (Number.isInteger(Math.sqrt(sum))) {
+        console.log('squared number!', sum)
+        // console.log(i)
+        answers.push([i , sum])
       }
     }
-    // console.log(`Divisors for ${i}:`,divisors)
-    let sum = divisors.reduce((accumulator, currValue) => accumulator + currValue)
-    // console.log('sum:',sum)
-    let squared = Math.sqrt(sum)
-    if (Number.isInteger(squared)) {
-      console.log('squared number!', sum)
-      console.log(i)
-    }
-  }
+    console.log(answers)
+  } else console.error('invalid input!')
 }
-listSquared(1, 250)
+listSquared(250, 500)
 // let squared = Math.sqrt(2500)
 // console.log(Math.pow(squared,2))
