@@ -14,18 +14,20 @@ function listSquared(minNumber, maxNum) {
           divisors.push(Math.pow(k,2))
         }
       }
-      // console.log(`Divisors for ${i}:`,divisors)
       let sum = divisors.reduce((accumulator, currValue) => accumulator + currValue)
-      // console.log('sum:',sum)
       if (Number.isInteger(Math.sqrt(sum))) {
         console.log('squared number!', sum)
-        // console.log(i)
         answers.push([i , sum])
       }
     }
     console.log(answers)
   } else console.error('invalid input!')
 }
-listSquared(250, 500)
+// listSquared(250, 500)
 // let squared = Math.sqrt(2500)
 // console.log(Math.pow(squared,2))
+
+//// Salesman's travel ////
+function travel(r, zipcode) {
+
+}
