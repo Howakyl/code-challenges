@@ -27,7 +27,36 @@ function listSquared(minNumber, maxNum) {
 // let squared = Math.sqrt(2500)
 // console.log(Math.pow(squared,2))
 
-//// Salesman's travel ////
-function travel(r, zipcode) {
-
+//// String Incrementer ////
+function incrementString (string) {
+  if (string.length > 0) {
+    string = string.split('')
+    let num = [];
+    for (let i = 0; i < string.length; i++) {
+      if (!isNaN(string[i])) {
+        // console.log(string[i])
+        num.push(parseInt(string[i]))
+      }
+    }
+    if (num.length === 0) {
+      num.push(0)
+    } else {
+      num.forEach(number => {
+        string.pop()
+      });
+    }
+  
+    console.log(num)
+    num[num.length- 1] = (num[num.length- 1] + 1)
+    console.log(num)
+    num = num.join('')
+    string = string.join('')
+    // string = string.splice()
+    console.log(string + num)
+  } else return "1"
 }
+
+// incrementString('foobar99')
+
+let number = 099;
+console.log(number.toString())
