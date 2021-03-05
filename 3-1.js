@@ -60,3 +60,45 @@ function incrementString (string) {
 
 // let number = 099;
 // let arr = [];
+
+//// perfect power //// 
+function isPp (number) {
+  console.time('label')
+  let answer = [];
+  for (let i = 1; i < number; i++) {
+
+    for (let k = 2; k < number + 2; k++) {
+      if (Math.pow(i, k) === number) {
+        answer.push(i, k)
+        console.timeEnd('label')
+        return answer;
+      }
+    }
+    // num ++;
+  }
+
+  if (answer.length < 2) {
+    return null;
+  } else {
+    return answer;
+  }
+}
+
+// console.log(isPp(4))
+
+function yee(number) {
+console.time('woo')
+  for (let m = 2; m * m <= number; m++) {
+    for (let k = 2; Math.pow(m, k) <= number; k++) {
+      if (Math.pow(m,k) == number){
+        console.timeEnd('woo')
+        return [m, k];
+      } 
+      }
+  }
+  return null;
+}
+
+// console.log(yee(125))
+
+////////////////////////////////
