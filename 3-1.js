@@ -58,5 +58,5 @@ function incrementString (string) {
 
 // incrementString('foobar99')
 
-let number = 099;
-console.log(number.toString())
+// let number = 099;
+// let arr = [];
