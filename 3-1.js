@@ -108,5 +108,5 @@ function multiply(a, b) {
   return (BigInt(parseInt(a) )* BigInt(parseInt(b))).toString()
   
 }
-console.log(multiply('1020303004875647366210', '2774537626200857473632627613'))
+// console.log(multiply('1020303004875647366210', '2774537626200857473632627613'))
 // console.log(parseInt('00123'))
