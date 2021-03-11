@@ -48,7 +48,7 @@ function encryptThis (text) {
 
 }
 
-console.log(encryptThis('A wise old owl lived in an oak'))
+// console.log(encryptThis('A wise old owl lived in an oak'))
 // console.log(encryptThis('hello world'))
 
 let foobar = String.fromCharCode(119)
@@ -76,6 +76,37 @@ function decipher (text) {
   return console.log(final)
 }
 
-decipher(encryptThis('A wise old owl lived in an oak'))
+// decipher(encryptThis('A wise old owl lived in an oak'))
 
-console.log(isNaN(parseInt('r')))
+//// extract file name ////
+
+class FileNameExtractor {
+  static extractFileName (dirtyFileName) {
+    for (let i = 0; i < dirtyFileName.length; i++) {
+      if (dirtyFileName.charAt(i) === '_') {
+        break;
+      }
+      if (!isNaN(dirtyFileName.charAt(i))) {
+        dirtyFileName = dirtyFileName.replace(dirtyFileName.charAt(i), ' ')
+      }
+    }
+      dirtyFileName = dirtyFileName.trim()
+    if (dirtyFileName.charAt(0) === '_' || dirtyFileName.charAt(0) === '.') {
+      dirtyFileName = dirtyFileName.replace(dirtyFileName.charAt(0), '')
+    }
+    dirtyFileName = dirtyFileName.split('.')
+    dirtyFileName.pop()
+    return dirtyFileName.join('.')
+  }
+
+  // CONCISE SOLUTION //
+  static extractConcise (fileName) {
+    let numSlice = fileName.indexOf('_')
+    let extSlice = fileName.lastIndexOf('.')
+    fileName = fileName.slice(numSlice + 1, extSlice)
+    return fileName
+  }
+}
+
+// console.log(FileNameExtractor.extractFileName('1231231223123131_myFil2e.tar.gz2'))
+// console.log(FileNameExtractor.extractConcise('1231231223123131_myFil2e.tar.gz2'))
