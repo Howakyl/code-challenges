@@ -77,3 +77,5 @@ function decipher (text) {
 }
 
 decipher(encryptThis('A wise old owl lived in an oak'))
+
+console.log(isNaN(parseInt('r')))
