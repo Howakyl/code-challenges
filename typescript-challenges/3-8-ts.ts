@@ -1,6 +1,6 @@
 function decipherThis (text: string):string {
   let final:string = '';
-  text.split(' ').map(word => {
+  text.split(' ').map((word: string) => {
     let numbers: (string|number)[] | number = [];
     let letters: string[] | string = [];
     for (let i = 0; i < word.length; i++) {
