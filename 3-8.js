@@ -51,17 +51,29 @@ function encryptThis (text) {
 console.log(encryptThis('A wise old owl lived in an oak'))
 // console.log(encryptThis('hello world'))
 
-// let thing = 'hello world'
-// thing.split(' ').map(word => console.log(word))
-// console.log(thing.split(' '))
+let foobar = String.fromCharCode(119)
+//// Decipher This! ////
+function decipher (text) {
+  let final = '';
+  text.split(' ').map(word => {
+    let numbers = [];
+    let letters = [];
+    for (let i = 0; i < word.length; i++) {
+      if (!isNaN(word[i])) {
+        numbers.push(word[i])
+      } else {
+        letters.push(word[i])
+      }
+    }
+    numbers = parseInt(numbers.join(''))
+    const temp = letters[0]
+    letters[0] = letters[letters.length - 1]
+    letters[letters.length - 1] = temp
+    letters = letters.join('')
+    let decrypted = String.fromCharCode(numbers)
+    final += decrypted + letters + ' '
+  })
+  return console.log(final)
+}
 
-let string1 = '65 119esi 111dl 111lw 108devi 105n 97n 111ka'
-let string2 = '65 119esi 111dl 111lw 108dvei 105n 97n 111ka'
-
-let string3 = 'orld'
-string3 = string3.split('')
-const tmp = string3[0]
-string3[0] = string3[string3.length - 1]
-string3[string3.length - 1] = tmp
-
-// console.log(string3)
+decipher(encryptThis('A wise old owl lived in an oak'))
