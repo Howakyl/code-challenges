@@ -22,4 +22,16 @@ function decipherThis(text) {
     return final;
 }
 ;
-console.log(decipherThis('65 119esi 111dl 111lw 108dvei 105n 97n 111ka'));
+// console.log(decipherThis('65 119esi 111dl 111lw 108dvei 105n 97n 111ka'))
+//// File Name Extractor ////
+var ExtractFileName = /** @class */ (function () {
+    function ExtractFileName() {
+    }
+    ExtractFileName.extractFileName = function (dirtyFileName) {
+        var numSlice = dirtyFileName.indexOf('_');
+        var extSlice = dirtyFileName.lastIndexOf('.');
+        dirtyFileName = dirtyFileName.slice(numSlice + 1, extSlice);
+        return dirtyFileName;
+    };
+    return ExtractFileName;
+}());

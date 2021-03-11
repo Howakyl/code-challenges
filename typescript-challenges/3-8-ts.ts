@@ -21,4 +21,14 @@ function decipherThis (text: string):string {
   return final;
 };
 
-console.log(decipherThis('65 119esi 111dl 111lw 108dvei 105n 97n 111ka'))
+// console.log(decipherThis('65 119esi 111dl 111lw 108dvei 105n 97n 111ka'))
+
+//// File Name Extractor ////
+class ExtractFileName {
+  static extractFileName (dirtyFileName: string): string {
+    let numSlice: number = dirtyFileName.indexOf('_');
+    let extSlice: number = dirtyFileName.lastIndexOf('.');
+    dirtyFileName = dirtyFileName.slice(numSlice + 1, extSlice)
+    return dirtyFileName;
+  }
+}
