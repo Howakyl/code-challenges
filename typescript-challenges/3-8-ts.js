@@ -35,3 +35,34 @@ var ExtractFileName = /** @class */ (function () {
     };
     return ExtractFileName;
 }());
+function validatePass(password) {
+    var upper = false;
+    var lower = false;
+    var num = false;
+    for (var i = 0; i < password.length; i++) {
+        var char = password.charCodeAt(i);
+        var value = password.charAt(i);
+        if (!(char > 47 && char < 58) &&
+            !(char > 64 && char < 91) &&
+            !(char > 96 && char < 123)) {
+            return false;
+        }
+        if (password.length >= 6) {
+            if (value === value.toUpperCase()) {
+                upper = true;
+            }
+            if (value === value.toLowerCase()) {
+                lower = true;
+            }
+            if (isNaN(parseInt(password.charAt(i)))) {
+                num = true;
+            }
+        }
+    }
+    if (upper && lower && num) {
+        return true;
+    }
+    else
+        return false;
+}
+console.log(validatePass('!JHd5fslqoS'));

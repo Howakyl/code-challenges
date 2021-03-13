@@ -32,3 +32,39 @@ class ExtractFileName {
     return dirtyFileName;
   }
 }
+
+function validatePass (password: string): boolean {
+  let upper: boolean = false;
+  let lower: boolean = false;
+  let num: boolean = false;
+
+  for (let i: number = 0; i < password.length; i++) {
+    let char: number = password.charCodeAt(i);
+    let value: string = password.charAt(i);
+    if (
+      !(char > 47 && char < 58) &&
+      !(char > 64 && char < 91) &&
+      !(char > 96 && char < 123)
+      ) {
+      return false;
+    }
+
+    if (password.length >= 6) {
+      if (value === value.toUpperCase()) {
+        upper = true;
+      }
+      if (value === value.toLowerCase()) {
+        lower = true;
+      }
+      if (isNaN(parseInt(password.charAt(i)))) {
+        num = true;
+      }
+    }
+  }
+
+  if (upper && lower && num) {
+    return true;
+  } else return false;
+} 
+
+console.log(validatePass('!JHd5fslqoS'))

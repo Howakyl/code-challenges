@@ -110,3 +110,46 @@ class FileNameExtractor {
 
 // console.log(FileNameExtractor.extractFileName('1231231223123131_myFil2e.tar.gz2'))
 // console.log(FileNameExtractor.extractConcise('1231231223123131_myFil2e.tar.gz2'))
+
+//// Validate Password ////
+// at least six characters long
+// contains lowercase
+// contains uppercase
+// contains number
+
+function validate (password) {
+  let upper = false;
+  let lower = false;
+  let num = false;
+
+  for (let i = 0; i < password.length; i++) {
+    let char = password.charCodeAt(i);
+    if (
+      !(char > 47 && char < 58) &&
+      !(char > 64 && char < 91) &&
+      !(char > 96 && char < 123)
+      ) {
+        console.log(char)
+        return false;
+    }
+
+    if (password.length >= 6) {
+      if (password.charAt(i) === password.charAt(i).toUpperCase() && isNaN(password.charAt(i))) {
+        upper = true;
+      }
+      if (password.charAt(i) === password.charAt(i).toLowerCase() && isNaN(password.charAt(i))) {
+        lower = true;
+      }
+      if (!isNaN(password.charAt(i))) {
+        num = true;
+      }
+  
+    }
+  }
+  console.log(`upper: ${upper} , lower: ${lower}, num: ${num}`)
+  if (upper && lower && num) {
+    return true
+  } else return false
+}
+
+console.log(validate('JHd5FJ53'))
