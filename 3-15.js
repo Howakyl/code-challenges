@@ -1,25 +1,30 @@
+//// Rock em Sock em robots ////
 function fight(robot1, robot2, tactics) {
   function botAttack (bot, target) {
     let attack = bot.tactics.shift()
 
-      if (bot.tactics.length === 0) {
-        target.health -= 0
-      }
+    if (bot.tactics.length === 0) {
+      target.health -= 0
+    }
 
-      if (attack === 'punch') {
+    switch (attack) {
+      case 'punch':
         console.log(`${bot.name} strikes with a ${attack}!`)
         target.health -= 20;
-      } else if (attack === 'laser') {
+        break;
+      case 'laser':
         console.log(`${bot.name} strikes with a ${attack}!`)
         target.health -= 30;
-      } else if (attack === 'missile') {
+        break;
+      case 'missile':
         console.log(`${bot.name} strikes with a ${attack}!`)
         target.health -= 35;
-      } else if (attack === 'space ray') {
+        break;
+      case 'space ray':
         console.log('attack!!!')
         target.health = 0;
-        return `${bot.name} has won the fight.`
-      }
+        break;
+    }
   }
 
   if (robot1.speed >= robot2.speed) {
@@ -70,7 +75,7 @@ bot1 = {
 }
 bot2 = {
   "name": "Missile Bob",
-  "health": 200,
+  "health": 150,
   "speed": 20,
   "tactics": ["missile", "missile", "missile", "missile"]
 }
@@ -80,4 +85,4 @@ tactics = {
   "missile": 35
 }
 
-// fight(bot1, bot2)
+fight(bot1, bot2)
