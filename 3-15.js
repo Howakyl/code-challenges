@@ -85,4 +85,51 @@ tactics = {
   "missile": 35
 }
 
-fight(bot1, bot2)
+// fight(bot1, bot2)
+
+//// How many numbers? ////
+// find all the numbers of three digits where: 
+// the sum of their digits is equal to 10
+// their digits are in increasing order (the numbers may have two or more equal contiguous digits)
+
+// ARGUMENTS: sum of the digits value , desired number of digits for the numbers 
+// OUTPUT: 1 - the total number of possible numbers
+//         2 - the min number
+//         3 - the max number
+// if only one possible number, should input like so: (27, 3) => [1, "999", "9999"]
+
+function findAll (sum, numOfDigits) {
+  // console.log(sum.toString().length)
+  let validNums = [];
+  let answerArr = [];
+  for (let i = 0; i.toString().length < numOfDigits + 1; i++) {
+    let numCheck = i.toString().split('')
+    let sumOfDigits = numCheck.reduce((a, b) => Number(a) + Number(b))
+    if (sumOfDigits === sum && numCheck.length === numOfDigits) {
+      validNums.push(numCheck.join(''))
+    }
+  }
+  for (let j = 0; j < validNums.length; j++) {
+    let ascendCheck = validNums[j]
+      if (ascendCheck.split('').sort().join('') === ascendCheck) {
+        // console.log(ascendCheck)
+        answerArr.push(ascendCheck)
+      }
+  }
+  // console.log(validNums)
+  // console.log('answer arr: ', answerArr)
+
+  if (answerArr.length === 0) {
+    return []
+  } else {
+    return [answerArr.length, answerArr[0], answerArr[answerArr.length - 1]]
+  }
+}
+
+console.log(findAll(35,6))
+
+// let num ='123';
+// let orderedString = num.toString().split('').sort().join('')
+// if (num == orderedString) {
+//   console.log(num , orderedString)
+// }
