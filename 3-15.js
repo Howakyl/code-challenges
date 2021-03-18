@@ -99,37 +99,31 @@ tactics = {
 // if only one possible number, should input like so: (27, 3) => [1, "999", "9999"]
 
 function findAll (sum, numOfDigits) {
-  // console.log(sum.toString().length)
-  let validNums = [];
+  console.time('label')
   let answerArr = [];
   for (let i = 0; i.toString().length < numOfDigits + 1; i++) {
+    let sumOfDigits ;
     let numCheck = i.toString().split('')
-    let sumOfDigits = numCheck.reduce((a, b) => Number(a) + Number(b))
-    if (sumOfDigits === sum && numCheck.length === numOfDigits) {
-      validNums.push(numCheck.join(''))
-    }
-  }
-  for (let j = 0; j < validNums.length; j++) {
-    let ascendCheck = validNums[j]
-      if (ascendCheck.split('').sort().join('') === ascendCheck) {
-        // console.log(ascendCheck)
-        answerArr.push(ascendCheck)
+    if (numCheck.length === numOfDigits) {
+      sumOfDigits = numCheck.reduce((a, b) => Number(a) + Number(b))
+      if (sumOfDigits === sum) {
+        if (numCheck.sort((a,b) => a - b).join('') === i.toString()) {
+          answerArr.push(i.toString())
+          
+        }
       }
+    }
+    // console.log(sumOfDigits)
   }
-  // console.log(validNums)
-  // console.log('answer arr: ', answerArr)
 
   if (answerArr.length === 0) {
     return []
   } else {
+    console.timeEnd('label')
     return [answerArr.length, answerArr[0], answerArr[answerArr.length - 1]]
   }
 }
 
 console.log(findAll(35,6))
-
-// let num ='123';
-// let orderedString = num.toString().split('').sort().join('')
-// if (num == orderedString) {
-//   console.log(num , orderedString)
-// }
+// let arr = ['1', '10', '7', '11']
+// console.log(arr.sort((a,b) => a - b))
