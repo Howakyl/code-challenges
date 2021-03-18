@@ -124,6 +124,30 @@ function findAll (sum, numOfDigits) {
   }
 }
 
-console.log(findAll(35,6))
-// let arr = ['1', '10', '7', '11']
-// console.log(arr.sort((a,b) => a - b))
+// console.log(findAll(35,6))
+
+//// MergeSort "merge" function ////
+// take in two arrays, and return the arrays as one array, sorted
+// DONT USE ARRAY.SORT().
+
+function mergeSorted (arr1, arr2) {
+  let combinedArr = arr1.concat(arr2)
+  let sorted = false;
+  while (!sorted) {
+    // each time loop finishes, sorted is set to true.
+    sorted = true;
+    for (let i = 0; i < combinedArr.length; i++) {
+      // if current index is lower than previous, they are swapped, and sorted is set to FALSE. This will cause the while loop to continue.
+      // once all indecies are sorted, sorted will not become false, and the loop completes.
+      if (combinedArr[i - 1] > combinedArr[i]) {
+        sorted = false;
+        let temp = combinedArr[i - 1]
+        combinedArr[i - 1] = combinedArr[i]
+        combinedArr[i] = temp
+      }
+    }
+  }
+  return combinedArr
+}
+
+console.log(mergeSorted([1,2,3], [1,2,3]))
