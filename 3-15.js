@@ -150,4 +150,18 @@ function mergeSorted (arr1, arr2) {
   return combinedArr
 }
 
-console.log(mergeSorted([1,2,3], [1,2,3]))
+// console.log(mergeSorted([1,2,3], [1,2,3]))
+
+// function thing (a,b) {
+//   let done = false;
+
+//   while (!done) {
+//     console.log('a: ', a, 'b: ', b)
+//     done = true;
+//     if (a < b) {
+//       done = false;
+//       a += 1
+//     }
+//   }
+// }
+// thing(0, 3)
