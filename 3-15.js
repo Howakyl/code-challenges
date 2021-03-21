@@ -165,3 +165,14 @@ function mergeSorted (arr1, arr2) {
 //   }
 // }
 // thing(0, 3)
+
+function countBits (number) {
+  let total = 0;
+  number.toString(2).split('').map( bit => {
+    if (bit === '1') {
+      total ++;
+    }
+  })
+  return total
+}
+console.log(countBits(10));
