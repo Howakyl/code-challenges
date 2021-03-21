@@ -166,6 +166,7 @@ function mergeSorted (arr1, arr2) {
 // }
 // thing(0, 3)
 
+//// Bit Counting //// 
 function countBits (number) {
   let total = 0;
   number.toString(2).split('').map( bit => {
@@ -175,4 +176,6 @@ function countBits (number) {
   })
   return total
 }
-console.log(countBits(10));
+// console.log(countBits(10));
+const countBits2 = n => n.toString(2).split('0').join('').length;
+// console.log(countBits2(10))
