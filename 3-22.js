@@ -11,4 +11,14 @@ function maskify(cc) {
 const maskifyQuicker = (cc) => {
     return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4)
 }
-console.log(maskifyQuicker('23948u23498u'))
+// console.log(maskifyQuicker('23948u23498u'))
+
+//// additionless addition ////
+function add (x,y) {
+    if (y == 0) {
+        return x; 
+    } else {
+        return add(x ^ y, (x & y) << 1)
+    }
+};
+// console.log(add(4,4))
