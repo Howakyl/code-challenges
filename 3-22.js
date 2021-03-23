@@ -6,4 +6,9 @@ function maskify(cc) {
     }
     console.log(cc)
 }
-maskify('423598273498')
+// maskify('423598273498')
+
+const maskifyQuicker = (cc) => {
+    return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4)
+}
+console.log(maskifyQuicker('23948u23498u'))
