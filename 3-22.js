@@ -63,4 +63,11 @@ function decompose(n) {
   return null;
 }
 
-console.log(decompose(12))
+// console.log(decompose(12))
+//// concise solution to decompose squares ////
+function decompose2 (n, n2 = n*n, i=n, prev) {
+  while(n2 >0 && i-- >1) if (prev = decompose2(n, n2-i*i, i)) return prev.concat([i]);
+  return (n2 == 0) ? [] : null;
+}
+
+console.log(decompose2(11))
