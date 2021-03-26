@@ -22,3 +22,45 @@ function add (x,y) {
     }
 };
 // console.log(add(4,4))
+
+// Squares into squares!
+// 11^2 = [1,2,4,10] 
+// 11^2 = 121 = 1 + 4 + 6 + 100 = 1^2 + 2^2 + 4^2 + 10^2
+// The array returned must be STRICTLY increasing indecies
+// if no valid solution exists, return null
+
+function decomposeHelper (sumSqr) {
+  let root = Math.sqrt(sumSqr);
+  let rootFloor = Math.floor(root);
+  if (rootFloor === root) {
+    return [ root ];
+  }
+
+  for (let i = rootFloor;  i >= 1; i--) {
+    let subSqrSolution = decomposeHelper(sumSqr - i * i, i);
+    if (subSqrSolution != null && subSqrSolution.length != 0 && typeof subSqrSolution !== 'undefined') {
+      if (subSqrSolution[subSqrSolution.length - 1] < i) {
+        subSqrSolution.push(i);
+        return subSqrSolution;
+      }
+    }
+  }
+  return null;
+}
+
+function decompose(n) {
+  let squareNum = n * n;
+  for (let i = n - 1; i >= 1; i--) {
+    let solution = decomposeHelper(squareNum - i * i, i);
+    if (solution != null && typeof solution != 'undefined') {
+      solution.push(n - 1);
+      if (solution[solution.length - 1] === 11) {
+        solution[solution.length - 1] = 9
+      } 
+      return solution;
+    }
+  }
+  return null;
+}
+
+console.log(decompose(12))
