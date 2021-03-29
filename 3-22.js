@@ -70,4 +70,58 @@ function decompose2 (n, n2 = n*n, i=n, prev) {
   return (n2 == 0) ? [] : null;
 }
 
-console.log(decompose2(11))
+// console.log(decompose2(11)
+
+// swap string casings 
+
+// for every character in string A, swap the casing of the same occurence in string B. This can go back and forth between lower and upper for each occurence.
+// do the same thing for A.
+// combine the strings.
+
+function swapStringCasing (a,b) {
+  const aLower = a.toLowerCase();
+  const bLower = b.toLowerCase();
+
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0 ; j < b.length; j++) {
+      if (aLower.charAt(i) === bLower.charAt(j)) {
+        console.log(b.charAt(j))
+        if (b.charAt(j) === b.charAt(j).toUpperCase()) {
+          b = b.replace(b.charAt(j), b.charAt(j).toLowerCase())
+        } else {
+          b = b.replace(b.charAt(j), b.charAt(j).toUpperCase())
+        }
+        // b.charAt(j) === b.charAt(j).toUpperCase() ?  b = b.replace(b.charAt(j), b.charAt(j).toLowerCase()) : b = b.replace(b.charAt(j), b.charAt(j).toUpperCase())
+      }
+    }
+  }
+
+  for (let i = 0; i < b.length; i++) {
+    for (let j = 0 ; j < a.length; j++) {
+      if (bLower.charAt(i) === aLower.charAt(j)) {
+        if (a.charAt(j) === a.charAt(j).toUpperCase()) {
+          a = a.replace(a.charAt(j), a.charAt(j).toLowerCase())
+        } else {
+          a = a.replace(a.charAt(j), a.charAt(j).toUpperCase())
+        }
+        // a.charAt(j) === a.charAt(j).toUpperCase() ?  a = a.replace(a.charAt(j), a.charAt(j).toLowerCase()) : a = a.replace(a.charAt(j), a.charAt(j).toUpperCase())
+      }
+    }
+  }
+
+  return a + b
+}
+console.log(swapStringCasing('abcdeFgtrzw' , 'defgGgfhjkwqe'))
+console.log("abcDeFGtrzWDEFGgGFhjkWqE : EXPECTED")
+
+// function swapStringCasing2 (a, b) {
+//   const aLower = a.toLowerCase();
+//   const bLower = b.toLowerCase();
+//   let result ;
+//   for (let i = 0; i < a.length; i++) {
+//     result = bLower.split('').filter(letter => letter === aLower.charAt(i)).join('')
+//   }
+//   console.log(result)
+// }
+
+// swapStringCasing2 ('abc', 'cde')
