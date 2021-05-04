@@ -7,6 +7,10 @@ function spinWords (string) {
     }).join(' ')
 }
 
-console.log(spinWords('Hey fellow warriors'))
-console.log(spinWords('This is another test'))
-console.log(spinWords('Just kidding there is still one more'))
+// console.log(spinWords('Hey fellow warriors'))
+
+function descendingOrder (num) {
+    return parseInt(num.toString().split('').sort().reverse().join(''))
+}
+
+console.log(descendingOrder(42145))
