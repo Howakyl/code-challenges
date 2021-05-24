@@ -54,10 +54,11 @@ function encode(arr) {
     if(arr[i].includes('s')) {
       num += 39;
     }
-    console.log('NUM: ', num)
+    // console.log('NUM: ', num)
     answer.push(num)
   }
-  return console.log(answer.sort())
+  return console.log(answer.sort((a,b) => a-b))
 }
 
 encode(["Ac", "Ks", "5h", "Td", "3c"]);
+encode(["5h", "7c", "Qh", "Qs", "Ad"])
