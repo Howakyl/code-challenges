@@ -45,20 +45,74 @@ function encode(arr) {
     }
 
     // CHECK IF CLUB, DIAMOND, HEART, OR SPADE
-    if(arr[i].includes('d')) {
+    if (arr[i].includes("d")) {
       num += 13;
     }
-    if(arr[i].includes('h')) {
+    if (arr[i].includes("h")) {
       num += 26;
     }
-    if(arr[i].includes('s')) {
+    if (arr[i].includes("s")) {
       num += 39;
     }
     // console.log('NUM: ', num)
-    answer.push(num)
+    answer.push(num);
   }
-  return console.log(answer.sort((a,b) => a-b))
+  return console.log(answer.sort((a, b) => a - b));
 }
 
-encode(["Ac", "Ks", "5h", "Td", "3c"]);
-encode(["5h", "7c", "Qh", "Qs", "Ad"])
+// encode(["Ac", "Ks", "5h", "Td", "3c"]);
+// encode(["5h", "7c", "Qh", "Qs", "Ad"]);
+
+function decode(arr) {
+  const clubs = {
+    0: "A",
+    1: "2",
+    2: "3",
+    3: "4",
+    4: "5",
+    5: "6",
+    6: "7",
+    7: "8",
+    8: "9",
+    9: "T",
+    10: "J",
+    11: "Q",
+    12: "K",
+  };
+
+  arr = arr.sort((a, b) => a - b);
+  const answer = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= 0 && arr[i] < 13) {
+      for (const num in clubs) {
+        if (num === arr[i].toString()) {
+          answer.push(clubs[num] + "c");
+        }
+      }
+    }
+    if (arr[i] >= 13 && arr[i] < 26) {
+      for (const num in clubs) {
+        if (num === (arr[i] - 13).toString()) {
+          answer.push(clubs[num] + "d");
+        }
+      }
+    }
+    if (arr[i] >= 26 && arr[i] < 39) {
+      for (const num in clubs) {
+        if (num === (arr[i] - 26).toString()) {
+          answer.push(clubs[num] + "h");
+        }
+      }
+    }
+    if (arr[i] >= 39 && arr[i] < 52) {
+      for (const num in clubs) {
+        if (num === (arr[i] - 39).toString()) {
+          answer.push(clubs[num] + "s");
+        }
+      }
+    }
+  }
+  console.log(answer);
+}
+// c > d > h > s
+decode([0, 51, 30, 22, 2]);
