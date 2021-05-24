@@ -13,4 +13,10 @@ function descendingOrder (num) {
     return parseInt(num.toString().split('').sort().reverse().join(''))
 }
 
-console.log(descendingOrder(42145))
+// console.log(descendingOrder(42145))
+
+// function diophantine (n) {
+
+// }
+
+// diophantine(5)
