@@ -1,70 +1,52 @@
-// poker cards encoder/decoder
+// poker cards encoder/decoder //
 
 function encode(arr) {
   let answer = [];
+
+  const converter = {
+    A: 0,
+    2: 1,
+    3: 2,
+    4: 3,
+    5: 4,
+    6: 5,
+    7: 6,
+    8: 7,
+    9: 8,
+    T: 9,
+    J: 10,
+    Q: 11,
+    K: 12,
+  };
+
   for (let i = 0; i < arr.length; i++) {
     let num = 0;
-    if (arr[i].includes("A")) {
-      num = 0;
+    for (const card in converter) {
+      if (arr[i].includes(card)) {
+        num = converter[card]
+        console.log(card);
+        if (arr[i].includes("d")) {
+          num += 13;
+        }
+        if (arr[i].includes("h")) {
+          num += 26;
+        }
+        if (arr[i].includes("s")) {
+          num += 39;
+        }
+        answer.push(num);
+      }
     }
-    if (arr[i].includes("2")) {
-      num = 1;
-    }
-    if (arr[i].includes("3")) {
-      num = 2;
-    }
-    if (arr[i].includes("4")) {
-      num = 3;
-    }
-    if (arr[i].includes("5")) {
-      num = 4;
-    }
-    if (arr[i].includes("6")) {
-      num = 5;
-    }
-    if (arr[i].includes("7")) {
-      num = 6;
-    }
-    if (arr[i].includes("8")) {
-      num = 7;
-    }
-    if (arr[i].includes("9")) {
-      num = 8;
-    }
-    if (arr[i].includes("T")) {
-      num = 9;
-    }
-    if (arr[i].includes("J")) {
-      num = 10;
-    }
-    if (arr[i].includes("Q")) {
-      num = 11;
-    }
-    if (arr[i].includes("K")) {
-      num = 12;
-    }
-
-    // CHECK IF CLUB, DIAMOND, HEART, OR SPADE
-    if (arr[i].includes("d")) {
-      num += 13;
-    }
-    if (arr[i].includes("h")) {
-      num += 26;
-    }
-    if (arr[i].includes("s")) {
-      num += 39;
-    }
-    // console.log('NUM: ', num)
-    answer.push(num);
   }
+
   return console.log(answer.sort((a, b) => a - b));
 }
 
-// encode(["Ac", "Ks", "5h", "Td", "3c"]);
+encode(["Ac", "Ks", "5h", "Td", "3c"]);
 // encode(["5h", "7c", "Qh", "Qs", "Ad"]);
 
 function decode(arr) {
-  const clubs = {
+  const converter = {
     0: "A",
     1: "2",
     2: "3",
@@ -84,30 +66,30 @@ function decode(arr) {
   const answer = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] >= 0 && arr[i] < 13) {
-      for (const num in clubs) {
+      for (const num in converter) {
         if (num === arr[i].toString()) {
-          answer.push(clubs[num] + "c");
+          answer.push(converter[num] + "c");
         }
       }
     }
     if (arr[i] >= 13 && arr[i] < 26) {
-      for (const num in clubs) {
+      for (const num in converter) {
         if (num === (arr[i] - 13).toString()) {
-          answer.push(clubs[num] + "d");
+          answer.push(converter[num] + "d");
         }
       }
     }
     if (arr[i] >= 26 && arr[i] < 39) {
-      for (const num in clubs) {
+      for (const num in converter) {
         if (num === (arr[i] - 26).toString()) {
-          answer.push(clubs[num] + "h");
+          answer.push(converter[num] + "h");
         }
       }
     }
     if (arr[i] >= 39 && arr[i] < 52) {
-      for (const num in clubs) {
+      for (const num in converter) {
         if (num === (arr[i] - 39).toString()) {
-          answer.push(clubs[num] + "s");
+          answer.push(converter[num] + "s");
         }
       }
     }
@@ -115,4 +97,4 @@ function decode(arr) {
   console.log(answer);
 }
 // c > d > h > s
-decode([0, 51, 30, 22, 2]);
+// decode([0, 51, 30, 22, 2]);
