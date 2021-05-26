@@ -42,7 +42,7 @@ function encode(arr) {
   return console.log(answer.sort((a, b) => a - b));
 }
 
-encode(["Ac", "Ks", "5h", "Td", "3c"]);
+// encode(["Ac", "Ks", "5h", "Td", "3c"]);
 // encode(["5h", "7c", "Qh", "Qs", "Ad"]);
 
 function decode(arr) {
@@ -98,3 +98,38 @@ function decode(arr) {
 }
 // c > d > h > s
 // decode([0, 51, 30, 22, 2]);
+
+/////////////////////////////////
+
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function Context(first, second) {
+  this.first = first;
+  this.second = second;
+}
+
+function alternatingSplit(head) {
+  let arr = new Context;
+  let node = new Node;
+  arr.first = []
+  arr.second = []
+  
+
+  for (let i = 0; i < head.length; i++) {
+    // console.log(head[i])
+    // if (i % 2 !== 0) {
+    //   arr.first.push(head[i])
+    // }
+    // else {
+    //   arr.second.push(head[i])
+    // }
+
+
+  }
+  console.log(arr)
+}
+
+// alternatingSplit([1,2,3,4,5,null])
