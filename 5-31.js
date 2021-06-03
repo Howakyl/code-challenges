@@ -59,9 +59,27 @@ function findMedianArray(nums1, nums2) {
   }
 }
 
-// findMedianArray([1,3], [2])
-// findMedianArray([1], [])
-// findMedianArray([0,0], [0,0])
-// findMedianArray([1,2], [3,4])
-// findMedianArray([], [1])
-findMedianArray([3], [-2, -1]);
+// findMedianArray([3], [-2, -1]);
+
+function addLinkedList (l1, l2) {
+  l1 = parseInt(l1.join(''));
+  l2 = parseInt(l2.join(''));
+
+  // l1 = l1.map(num => {
+  //   return parseInt(num)
+  // })
+  let sum = l1 + l2
+  sum = sum.toString().split('')
+  let arr = []
+  for (let i = 0; i < sum.length; i++ ){
+    arr.push(parseInt(sum[i]))
+  }
+
+  console.log(arr.reverse())
+}
+
+addLinkedList([2,4,3], [5,6,4])
+addLinkedList([0], [0])
+addLinkedList([9,9,9,9,9,9,9], [9,9,9,9])
+// 342 + 465
+// console.log(parseInt('342'))
