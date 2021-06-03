@@ -42,9 +42,16 @@ function longestSubStr2(string) {
 // median two sorted arrays
 function findMedianArray (nums1, nums2) {
   let combined = [...nums1, ...nums2]
-
   combined = combined.sort()
   console.log(combined)
+
+  for (let i = combined.length; i > 0; i--) {
+    combined.pop()
+    combined.shift()
+    if (combined.length === 1) {
+      return console.log(combined[0])
+    }
+  }
 }
 
 findMedianArray([1,3], [2])
