@@ -133,3 +133,5 @@ function alternatingSplit(head) {
 }
 
 // alternatingSplit([1,2,3,4,5,null])
+
+console.log(new Date(parseInt("52fefe6cb0091856db00030e".substr(0,8), 16) * 1000))
