@@ -54,3 +54,19 @@ const scrambleWords = (str) => {
 // short = [string[0], ...short, string[string.length - 1]]
 // short.splice(saved[0],0, saved[1])
 // console.log(short.join(''))
+
+
+
+/////////////////////////////////////
+
+function fibonacci (num) {
+let start = [1,1];
+
+for (let i = 1; i < num + 1; i++) {
+  start.push(start[i] + start[i - 1])
+}
+
+console.log(start)
+}
+
+fibonacci(5)
