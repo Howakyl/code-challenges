@@ -69,4 +69,20 @@ for (let i = 1; i < num + 1; i++) {
 console.log(start)
 }
 
-fibonacci(5)
+// fibonacci(5)
+
+
+////////////////////////////////////
+
+function reverseInt (int) {
+  int = int.toString().split('').reverse()
+  if (int[int.length - 1] === '-') {
+    let dash = int.pop()
+    int.unshift(dash)
+  }
+  int = int.join('')
+  console.log(+int)
+}
+
+reverseInt(321)
+reverseInt(-123)
