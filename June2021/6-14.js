@@ -87,3 +87,17 @@ function reverseInt(int) {
 // reverseInt(-123);
 // reverseInt(120);
 // reverseInt(0);
+
+function alternateReverseInt(int) {
+  const isNegative = int < 0 ? true : false;
+  int = parseInt(int.toString().split("").reverse().join(""));
+  const outsideRange = int > Math.pow(2, 31) || int < (Math.pow(-2, 31) - 1) ? true : false;
+  if (outsideRange) {
+    return console.log(0);
+  }
+  return isNegative ? console.log(-Math.abs(int)) : console.log(int);
+}
+
+// alternateReverseInt(1534236469);
+
+////////////////////////////////////
