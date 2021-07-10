@@ -32,4 +32,4 @@ def list_squared(min_number, max_number):
 
 
 
-print(list_squared(1, 250))
+# print(list_squared(1, 250))
