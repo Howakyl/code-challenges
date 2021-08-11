@@ -11,14 +11,19 @@ const isVowel= (letter) =>  {
 
 const pigLatin = (sentence) => {
   for (let i = 0; i < sentence.length; i++) {
-    if (i === 0) {
-      let temp = sentence[0];
+    if (i === 0 && isVowel(sentence[0])) {
+      sentence += 'way'
+    } else if (i === 0 && !isVowel(sentence[0])) {
+      let temp = sentence[0]
       sentence = sentence.replace(sentence.charAt(0), '');
-      sentence += `${temp}ay`
+      if (temp.toUpperCase() === temp) {
+        sentence = sentence.replace(sentence.charAt(0), sentence.charAt(0).toUpperCase())
+      }
+      sentence += `${temp.toLowerCase()}ay`
     }
-    console.log(isVowel(sentence[i]))
   }
   console.log(sentence)
 }
 
 pigLatin('hello')
+pigLatin('apple')
